@@ -1,5 +1,5 @@
 pub fn for_three_length_input(value: &str) -> i32 {
-    let lowercase_value: &String = &value.to_lowercase();
+    let lowercase_value: String = value.to_lowercase();
     let user_input_vector: Vec<&str> = lowercase_value.split_whitespace().collect();
 
     let result = {
@@ -26,7 +26,7 @@ pub fn for_three_length_input(value: &str) -> i32 {
     check_for_third_input
 }
 
-pub fn check_if_department_match(department: &String, list_of_department: &Vec<String>) -> bool {
+pub fn check_if_department_match(department: &str, list_of_department: &Vec<String>) -> bool {
     let mut result = false;
     for dept in list_of_department {
         if dept == department {
