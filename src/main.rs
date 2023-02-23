@@ -26,10 +26,10 @@ fn main() {
             .read_line(&mut user_input)
             .expect("could not process your input");
 
-        let borrowed_user_input = &user_input;
-
-        let split = borrowed_user_input.split_whitespace();
-        let user_input_vector: Vec<String> = split.map(|s| s.to_string()).collect();
+        let user_input_vector: Vec<String> = user_input
+            .split_whitespace()
+            .map(|s| s.to_string())
+            .collect();
 
         let user_input_length = user_input_sorter::number_of_word_in_string(&user_input);
 
