@@ -45,7 +45,7 @@ fn main() {
                     //2 means the request is for staff a department
                     2 => {
                         //get the department value from user input
-                        //   let user_input_vector:Vec<&str> = user_input.split_whitespace().collect();
+                       
                         let department = user_input_vector.get(2).unwrap();
                         //loop through the list of department and check if any department matches
                         // with the requested department
@@ -63,7 +63,7 @@ fn main() {
                             _fasle => println!("sorry it doesn't match with any department"),
                         }
                     }
-                    _ => println!("invalid input please input again"),
+                    _ => println!("invalid command, please input a valid command"),
                 }
             }
             4 => {
@@ -78,14 +78,14 @@ fn main() {
                         let new_staff = organisation_hashmap
                             .entry(department_name.clone())
                             .or_insert(String::from(""));
-                        new_staff.push(' ');
                         new_staff.push_str(person_name);
+                        new_staff.push(' ');
 
                         println!("{person_name} have to added to {department_name} department")
                     }
                     // 2 means remove from department
                     2 => {
-                        // let user_input_vector:Vec<_> = input.split_whitespace().collect();
+                    
                         let person_name = user_input_vector.get(1).unwrap();
                         let department_name = user_input_vector.get(3).unwrap();
 
@@ -121,10 +121,10 @@ fn main() {
                             false => println!("sorry there is no department with that name"),
                         };
                     }
-                    _ => println!("invalid input please input again"),
+                    _ => println!("invalid command, please input a valid command"),
                 }
             }
-            _ => (),
+            _ =>  println!("invalid command, please input a valid command"),
         }
     }
 }
